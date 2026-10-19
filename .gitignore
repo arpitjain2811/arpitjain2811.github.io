@@ -1,0 +1,14 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.DS_Store
+vendor/
+.bundle/
+_drafts/
+_hold/
+assets/drafts/
+
+# working notes and local tooling, not part of the site
+CLAUDE.md
+.claude/

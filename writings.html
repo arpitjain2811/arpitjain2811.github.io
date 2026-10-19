@@ -1,0 +1,18 @@
+---
+layout: default
+title: Writings
+permalink: /writings/
+---
+<section class="wrap page">
+  <header class="page-head">
+    <h1>Writings</h1>
+  </header>
+  {% include filters.html %}
+  {% if site.posts.size > 0 %}
+    <ol class="rows" data-filterable>
+      {% for post in site.posts %}{% include post-row.html post=post %}{% endfor %}
+    </ol>
+  {% else %}
+    <p class="muted">The first posts are on their way, starting with the <a href="{{ '/projects/roll-model/' | relative_url }}">Roll Model series</a>.</p>
+  {% endif %}
+</section>

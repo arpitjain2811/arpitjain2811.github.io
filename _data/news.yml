@@ -1,0 +1,40 @@
+# Newest first. `kind`: career, launch, research, community, writing, personal.
+# `links` (optional): my LinkedIn post about it (not the AWS pages), without tracking parameters.
+- date: 2026-10-05
+  kind: research
+  text: "orange-bot picked the right die in 19 of 20 formal trials at night (95%; Wilson interval 76–99%)."
+- date: 2026-10-02
+  kind: career
+  text: Promoted to Senior Software Engineering Manager at AWS.
+  links:
+    - {label: LinkedIn, url: "https://www.linkedin.com/posts/arpitjain2811_im-happy-to-share-that-ive-been-promoted-ugcPost-7511580446988697600-zMB1/"}
+- date: 2026-09-10
+  kind: launch
+  text: The Quick desktop app is now generally available on Mac and Windows.
+  links:
+    - {label: LinkedIn, url: "https://www.linkedin.com/posts/arpitjain2811_amazon-quick-desktop-is-ga-im-so-proud-ugcPost-7504004862297161728-ioUB/"}
+- date: 2026-04-28
+  kind: launch
+  text: We launched the Quick desktop app in preview, on Mac and Windows.
+  links:
+    - {label: LinkedIn, url: "https://www.linkedin.com/posts/arpitjain2811_excited-to-launch-amazon-quick-desktop-ugcPost-7455055559294210066-Xz0W/"}
+- date: 2025-10-09
+  kind: launch
+  text: Amazon Quick Suite launched, and with it Quick Research, the deep-research agent my team built.
+  links:
+    - {label: LinkedIn, url: "https://www.linkedin.com/posts/arpitjain2811_meet-amazon-quick-suite-the-agentic-ai-application-share-7382125272608874496-hepr/"}
+- date: 2025-03-30
+  kind: career
+  text: Moved to AWS Q after seven years on Just Walk Out, to build generative AI apps for businesses.
+  links:
+    - {label: LinkedIn, url: "https://www.linkedin.com/posts/arpitjain2811_aws-awsq-genai-ugcPost-7312222766491975681-s_Wb/"}
+- date: 2022-06-01
+  kind: community
+  text: Started the Arpit Jain Best Researcher Scholarship at Manipal Institute of Technology.
+  links:
+    - {label: scholarship, url: "https://arpitjain2811.github.io/AJBRS-Website/"}
+- date: 2019-11-24
+  kind: research
+  text: "Our paper ORL, on benchmarking reinforcement learning for online optimization problems, went up on arXiv."
+  links:
+    - {label: arXiv, url: "https://arxiv.org/abs/1911.10641"}

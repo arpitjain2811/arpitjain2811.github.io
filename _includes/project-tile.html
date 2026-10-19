@@ -1,0 +1,7 @@
+{%- comment -%} Home page tile: the clip (or a colour block) and the title; the link covers the tile. {%- endcomment -%}
+{%- assign p = include.project -%}
+{%- assign th = site.data.themes | where: "id", p.theme | first -%}
+<div class="tile t-{{ th.color }}">
+  {% if p.media %}{% include media.html media=p.media %}{% else %}<div class="tile-blank" aria-hidden="true"></div>{% endif %}
+  <div class="tile-head"><span class="swatch" aria-hidden="true"></span><a class="mono strong card-link" href="{{ p.url | relative_url }}">{{ p.title }}</a><span class="mono small muted">{{ th.name | downcase }}</span></div>
+</div>

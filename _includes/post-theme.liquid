@@ -1,0 +1,4 @@
+{%- comment -%} Sets post_theme and post_project for include.post: its own theme, else its project's. {%- endcomment -%}
+{%- assign post_project = nil -%}
+{%- if include.post.project -%}{%- assign post_project = site.projects | where: "slug", include.post.project | first -%}{%- endif -%}
+{%- assign post_theme = include.post.theme | default: post_project.theme | default: "notes" -%}

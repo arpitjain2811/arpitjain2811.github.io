@@ -1,0 +1,48 @@
+# From the LinkedIn export, Arpit's promotion summary and his notes, 2026-10-13. Newest first.
+# Anchored on the title; `project` is what it was on, linked to its product page (`url`; no docs).
+# No figures (cost cuts etc.) for work at Amazon: those stay off the site.
+# `logo` (optional): a small square icon in assets/img/logos/.
+- org: Amazon Web Services
+  logo: /assets/img/logos/aws.png
+  where: Seattle
+  span: "2021 – now"
+  roles:
+    - title: Senior Software Engineering Manager
+      when: "Oct 2026 –"
+      project: Quick Desktop
+      what: Amazon Quick as a desktop app for Mac and Windows, so its AI agents can work alongside you on your own computer. Preview in April 2026, generally available in September.
+      url: "https://aws.amazon.com/quick/desktop/"
+    - title: Software Development Manager
+      when: "Mar 2025 – Oct 2026"
+      project: Quick Research
+      what: Quick's deep-research agent. Ask it a question and it comes back with a full report, sources included. Launched with Quick Suite in October 2025.
+      url: "https://aws.amazon.com/quick/research/"
+    - title: Software Development Manager
+      when: "2021 – 2025"
+      project: Just Walk Out
+      what: Led the machine learning engineering and MLOps teams behind its computer vision models. We set the training and data strategy, then built and scaled the organization's ML platform, and I co-wrote its two-year MLOps vision.
+      url: "https://aws.amazon.com/just-walk-out/"
+- org: Amazon
+  logo: /assets/img/logos/amazon.png
+  where: Seattle
+  span: "2015 – 2021"
+  roles:
+    - title: Software Development Engineer II, then Senior SDE
+      when: "2018 – 2021"
+      project: Just Walk Out
+      what: Large-scale inference hosting for computer vision models, in the cloud and on edge devices in the stores.
+    - title: Software Development Engineer, then SDE II
+      when: "2016 – 2018"
+      project: Supply Chain Optimization Technologies
+      what: Linear programming for supply-chain optimisation.
+    - title: Software Development Engineer Intern
+      when: "Summer 2015"
+      project: Supply chain management
+- org: Defence Research and Development Organisation
+  logo: /assets/img/logos/drdo.png
+  where: Delhi
+  span: "2013"
+  roles:
+    - title: Research Intern
+      when: "Jun – Dec 2013"
+      what: Combined deep learning with swarm intelligence to classify land cover in satellite images.

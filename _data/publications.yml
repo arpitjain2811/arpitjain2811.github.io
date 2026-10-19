@@ -1,0 +1,77 @@
+# From Google Scholar (user BYcXL0oAAAAJ), arXiv and Crossref, 2026-10-12. Newest first.
+# Links: pdf (a free copy), arxiv, doi; `abstract` and `bibtex` open in place. `selected` shows on the home page.
+- key: balaji2019orl
+  title: "ORL: Reinforcement Learning Benchmarks for Online Stochastic Optimization Problems"
+  authors: "B. Balaji, J. Bell-Masterson, E. Bilgin, A. Damianou, P. M. Garcia, A. Jain, R. Luo, A. Maggiar, B. Narayanaswamy, C. Ye"
+  venue: arXiv preprint
+  year: 2019
+  selected: true
+  pdf: https://arxiv.org/pdf/1911.10641
+  arxiv: "1911.10641"
+  doi: 10.48550/arXiv.1911.10641
+  abstract: >-
+    Reinforcement Learning (RL) has achieved state-of-the-art results in domains such as robotics and
+    games. We build on this previous work by applying RL algorithms to a selection of canonical online
+    stochastic optimization problems with a range of practical applications: Bin Packing, Newsvendor,
+    and Vehicle Routing. While there is a nascent literature that applies RL to these problems, there are
+    no commonly accepted benchmarks which can be used to compare proposed approaches rigorously in terms
+    of performance, scale, or generalizability. This paper aims to fill that gap. For each problem we
+    apply both standard approaches as well as newer RL algorithms and analyze results. In each case, the
+    performance of the trained RL policy is competitive with or superior to the corresponding baselines,
+    while not requiring much in the way of domain knowledge. This highlights the potential of RL in
+    real-world dynamic resource allocation problems.
+  bibtex: |-
+    @article{balaji2019orl,
+      title   = {{ORL}: Reinforcement Learning Benchmarks for Online Stochastic Optimization Problems},
+      author  = {Balaji, Bharathan and Bell-Masterson, Jordan and Bilgin, Enes and Damianou, Andreas and Garcia, Pablo Moreno and Jain, Arpit and Luo, Runfei and Maggiar, Alvaro and Narayanaswamy, Balakrishnan and Ye, Chun},
+      journal = {arXiv preprint arXiv:1911.10641},
+      year    = {2019}
+    }
+- key: rana2013micf
+  title: "Most Influential Contextual-Features (MICF) based model for Context-Aware Recommender System"
+  authors: "S. Rana, A. Jain, V. K. Panchal"
+  venue: "C2SPCA 2013, IEEE"
+  year: 2013
+  doi: 10.1109/C2SPCA.2013.6749418
+  bibtex: |-
+    @inproceedings{rana2013micf,
+      title     = {Most Influential Contextual-Features ({MICF}) based model for Context-Aware Recommender System},
+      author    = {Rana, Satakshi and Jain, Arpit and Panchal, V. K.},
+      booktitle = {2013 International Conference on Emerging Trends in Communication, Control, Signal Processing and Computing Applications (C2SPCA)},
+      pages     = {1--6},
+      year      = {2013},
+      publisher = {IEEE},
+      doi       = {10.1109/C2SPCA.2013.6749418}
+    }
+- key: gupta2013contextual
+  title: "Contextual information based recommender system using Singular Value Decomposition"
+  authors: "R. Gupta, A. Jain, S. Rana, S. Singh"
+  venue: "ICACCI 2013, IEEE"
+  year: 2013
+  doi: 10.1109/ICACCI.2013.6637502
+  bibtex: |-
+    @inproceedings{gupta2013contextual,
+      title     = {Contextual information based recommender system using Singular Value Decomposition},
+      author    = {Gupta, Rahul and Jain, Arpit and Rana, Satakshi and Singh, Sanjay},
+      booktitle = {2013 International Conference on Advances in Computing, Communications and Informatics (ICACCI)},
+      pages     = {2084--2089},
+      year      = {2013},
+      publisher = {IEEE},
+      doi       = {10.1109/ICACCI.2013.6637502}
+    }
+- key: gupta2013mhi
+  title: "A novel method to represent repetitive and overwriting activities in motion history images"
+  authors: "R. Gupta, A. Jain, S. Rana"
+  venue: "ICCSP 2013, IEEE"
+  year: 2013
+  doi: 10.1109/ICCSP.2013.6577116
+  bibtex: |-
+    @inproceedings{gupta2013mhi,
+      title     = {A novel method to represent repetitive and overwriting activities in motion history images},
+      author    = {Gupta, Rahul and Jain, Arpit and Rana, Satakshi},
+      booktitle = {2013 International Conference on Communication and Signal Processing (ICCSP)},
+      pages     = {556--560},
+      year      = {2013},
+      publisher = {IEEE},
+      doi       = {10.1109/ICCSP.2013.6577116}
+    }

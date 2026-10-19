@@ -1,0 +1,3 @@
+{%- comment -%} include.id: a theme id from _data/themes.yml {%- endcomment -%}
+{%- assign th = site.data.themes | where: "id", include.id | first -%}
+{%- if th -%}<a class="chip theme-chip t-{{ th.color }}" href="{{ '/projects/' | relative_url }}#{{ th.id }}">{{ th.name }}</a>{%- endif -%}

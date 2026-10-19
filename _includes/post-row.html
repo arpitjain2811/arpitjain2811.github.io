@@ -1,0 +1,13 @@
+{%- include post-theme.liquid post=include.post -%}
+<li class="row" data-topic="{{ post_theme }}">
+  <span class="row-when mono small muted">{{ include.post.date | date: "%b %Y" }}</span>
+  <div class="row-body">
+    <a class="row-title" href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
+    {% if include.post.subtitle %}<p class="row-summary">{{ include.post.subtitle }}</p>{% endif %}
+    <div class="chips">
+      {% include theme-chip.html id=post_theme %}
+      {% if post_project %}<a class="chip" href="{{ post_project.url | relative_url }}">{{ post_project.title }}</a>{% endif %}
+      {% if include.post.example %}<span class="chip todo">example</span>{% endif %}
+    </div>
+  </div>
+</li>

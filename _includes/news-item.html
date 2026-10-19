@@ -1,0 +1,8 @@
+{%- assign n = include.item -%}
+<li class="row">
+  <span class="row-when mono small muted">{% if n.precision == "year" %}{{ n.date | date: "%Y" }}{% else %}{{ n.date | date: "%b %Y" }}{% endif %}</span>
+  <div class="row-body">
+    <p class="news-text">{{ n.text }}</p>
+    <div class="row-meta mono small"><span class="muted">{{ n.kind }}</span>{% for l in n.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</div>
+  </div>
+</li>

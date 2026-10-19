@@ -1,0 +1,26 @@
+---
+layout: default
+title: Community
+permalink: /community/
+---
+<section class="wrap page">
+  <header class="page-head">
+    <h1>Community</h1>
+  </header>
+  <div class="cards">
+    {% for c in site.data.community %}
+      <div class="card community-card{% if c.media or c.art %} has-media{% endif %}{% if c.wide %} is-wide{% endif %}">
+        {% if c.media %}{% include media.html media=c.media class="card-media" %}{% endif %}
+        {% if c.art %}<div class="card-media">{% include {{ c.art }} %}</div>{% endif %}
+        <div class="card-text">
+          <div class="card-head mono small muted">{{ c.kind }}{% if c.since %} · {{ c.since }}{% endif %}</div>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.summary }}</p>
+          {% if c.stats %}<dl class="stats">{% for s in c.stats %}<div><dt class="mono small muted">{{ s.label }}</dt><dd>{{ s.value }}</dd></div>{% endfor %}</dl>{% endif %}
+        </div>
+        {% if c.links %}<div class="row-meta mono small card-links">{% for l in c.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</div>{% endif %}
+        {% if c.media.caption %}<span class="credit mono">{{ c.media.caption }}</span>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>

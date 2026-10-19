@@ -1,0 +1,18 @@
+{%- assign pub = include.pub -%}
+<li class="pub">
+  <span class="pub-year mono small muted">{{ pub.year }}</span>
+  <div>
+    <div class="pub-title">{{ pub.title }}</div>
+    <div class="pub-meta">{{ pub.authors | replace: "A. Jain", "<strong>A. Jain</strong>" }}. <em>{{ pub.venue }}</em>, {{ pub.year }}.</div>
+    <div class="pub-actions mono">
+      {% if pub.pdf %}<a class="pill" href="{{ pub.pdf }}">pdf</a>{% endif %}
+      {% if pub.arxiv %}<a class="pill" href="https://arxiv.org/abs/{{ pub.arxiv }}">arxiv</a>{% endif %}
+      {% if pub.doi and pub.arxiv == nil %}<a class="pill" href="https://doi.org/{{ pub.doi }}">ieee</a>{% endif %}
+      {% if pub.code %}<a class="pill" href="{{ pub.code }}">code</a>{% endif %}
+      {% if pub.abstract %}<button class="pill" type="button" aria-expanded="false" data-toggle="abs-{{ pub.key }}">abstract</button>{% endif %}
+      {% if pub.bibtex %}<button class="pill" type="button" aria-expanded="false" data-toggle="bib-{{ pub.key }}">cite</button>{% endif %}
+    </div>
+    {% if pub.abstract %}<p class="pub-panel pub-abstract" id="abs-{{ pub.key }}" hidden>{{ pub.abstract }}</p>{% endif %}
+    {% if pub.bibtex %}<div class="pub-panel" id="bib-{{ pub.key }}" hidden><pre class="bibtex">{{ pub.bibtex | xml_escape }}</pre><button class="pill copy" type="button" data-copy="bib-{{ pub.key }}">copy bibtex</button></div>{% endif %}
+  </div>
+</li>

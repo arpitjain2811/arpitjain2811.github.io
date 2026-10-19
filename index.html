@@ -1,0 +1,109 @@
+---
+layout: default
+title: Arpit Jain
+---
+<section id="about" class="wrap profile">
+  <aside class="profile-card">
+    <img class="avatar" src="{{ '/assets/img/arpit.jpg' | relative_url }}" alt="Arpit Jain" width="168" height="168">
+    <div class="profile-id">
+      <h1>Arpit Jain</h1>
+      <p class="mono small">Senior Software Engineering Manager<br>Amazon Web Services · Seattle</p>
+    </div>
+    <ul class="profile-links mono small">
+      <li><a href="https://scholar.google.com/citations?user=BYcXL0oAAAAJ">scholar</a></li>
+      <li><a href="https://github.com/{{ site.github_username }}">github</a></li>
+      <li><a href="https://www.linkedin.com/in/arpitjain2811/">linkedin</a></li>
+    </ul>
+    <a class="button button-small" href="mailto:arpit.jain2811@gmail.com">Email me</a>
+  </aside>
+
+  <div class="profile-body">
+    <h2>Biography</h2>
+    <div class="bio">
+      <p>I'm an engineering manager at AWS in Seattle, where I work on Amazon Quick. My team builds the desktop app, which brings its AI agents to your own computer. Before that we built Quick Research, the deep-research agent.</p>
+      <p>I've been at Amazon since 2016. I started on supply chain optimization, then spent seven years on Just Walk Out, the technology behind checkout-free stores. There I went from running computer vision models at scale, in the cloud and on in-store devices, to leading the teams that built its machine learning platform. Along the way I co-wrote ORL, a paper on benchmarking reinforcement learning on problems like bin packing and vehicle routing.</p>
+      <p>At home I'm teaching skills to my robotic arm, and writing about it as I go. I have a master's in computer science from NYU.</p>
+    </div>
+    <div class="facts">
+      <div>
+        <h3 class="kicker">Interests</h3>
+        <ul class="plain">
+          <li>Robot learning</li>
+          <li>Agentic AI</li>
+          <li>Computer vision</li>
+          <li>Reinforcement learning</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="kicker">Education</h3>
+        <ul class="plain">
+          <li><span class="strong">M.S. Computer Science</span>, 2015<br><span class="muted">New York University · GPA 3.97/4.0 · fellowship</span></li>
+          <li><span class="strong">Bachelor's, Information Technology</span>, 2013<br><span class="muted">Manipal Institute of Technology · GPA 8.23/10</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="now" class="wrap section">
+  <div class="section-head">
+    <h2>Projects</h2>
+    <a class="mono small" href="{{ '/projects/' | relative_url }}">all projects</a>
+  </div>
+  {% assign featured = site.projects | where: "featured", true | sort: "order" %}
+  <div class="tiles">{% for p in featured %}{% include project-tile.html project=p %}{% endfor %}</div>
+</section>
+
+<section id="writings" class="wrap section">
+  <div class="section-head">
+    <h2>Writings</h2>
+    <a class="mono small" href="{{ '/writings/' | relative_url }}">all writings</a>
+  </div>
+  {% if site.posts.size > 0 %}
+    <ol class="rows">{% for post in site.posts limit: 5 %}{% include post-row.html post=post %}{% endfor %}</ol>
+  {% else %}
+    <p class="muted">The first posts are on their way, starting with the <a href="{{ '/projects/roll-model/' | relative_url }}">Roll Model series</a>.</p>
+  {% endif %}
+</section>
+
+<section id="news" class="wrap section">
+  <div class="section-head">
+    <h2>News</h2>
+    <a class="mono small" href="{{ '/news/' | relative_url }}">all news</a>
+  </div>
+  <ol class="rows">{% for n in site.data.news limit: 4 %}{% include news-item.html item=n %}{% endfor %}</ol>
+</section>
+
+<section id="publications" class="wrap section">
+  <div class="section-head">
+    <h2>Publications</h2>
+    <a class="mono small" href="{{ '/publications/' | relative_url }}">all publications</a>
+  </div>
+  {% comment %} All of them while the list is short; past six, only `selected: true`. {% endcomment %}
+  {% assign shown = site.data.publications %}
+  {% if shown.size > 6 %}{% assign shown = site.data.publications | where: "selected", true %}{% endif %}
+  <ol class="pubs">{% for pub in shown %}{% include pub.html pub=pub %}{% endfor %}</ol>
+</section>
+
+<section id="experience" class="wrap section">
+  <h2>Experience</h2>
+  <ol class="timeline">
+    {% for job in site.data.experience %}
+      <li class="timeline-org">
+        <div class="timeline-when mono small muted">{{ job.span }}</div>
+        <div>
+          <h3 class="org-head">{% if job.logo %}<img class="org-logo" src="{{ job.logo | relative_url }}" alt="" width="28" height="28">{% endif %}{{ job.org }} <span class="mono small muted">{{ job.where }}</span></h3>
+          <ul class="roles">
+            {% for r in job.roles %}
+              <li>
+                <div class="role-head"><span class="strong">{{ r.title }}</span>{% if r.when %}<span class="mono small muted">{{ r.when }}</span>{% endif %}</div>
+                {% if r.project %}<div class="mono small role-project">{% if r.url %}<a href="{{ r.url }}">{{ r.project }}</a>{% else %}{{ r.project }}{% endif %}</div>{% endif %}
+                {% if r.what %}<p class="role-what">{{ r.what }}</p>{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+</section>

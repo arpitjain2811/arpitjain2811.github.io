@@ -1,0 +1,48 @@
+# arpit-jain.com, built by GitHub Pages (Jekyll). See README.md.
+title: Arpit Jain
+tagline: Engineering manager at AWS
+description: >-
+  Arpit Jain is an engineering manager at AWS, working on Amazon Quick. At home he's teaching a
+  robotic arm to pick up dice.
+author: Arpit Jain
+# Until the custom domain is attached; then https://arpit-jain.com (and a CNAME file).
+url: "https://arpitjain2811.github.io"
+baseurl: ""
+lang: en
+
+github_username: arpitjain2811
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Content model (see README.md): themes in _data/themes.yml; a project or a post names one theme.
+# A post may name a `project`; a project lists its posts. Either can exist without the other.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: {path: ""}
+    values: {image: /assets/img/og-card.jpg}
+  - scope: {path: "", type: posts}
+    values: {layout: post}
+  - scope: {path: "", type: projects}
+    values: {layout: project}
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - scripts/

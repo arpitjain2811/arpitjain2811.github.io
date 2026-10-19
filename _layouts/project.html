@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign th = site.data.themes | where: "id", page.theme | first -%}
+{%- assign p_posts = site.posts | where: "project", page.slug | sort: "series_order" -%}
+<article class="wrap page project-page t-{{ th.color }}">
+  <header class="page-head">
+    <div class="chips">{% include theme-chip.html id=page.theme %}{% if page.since %}<span class="chip">since {{ page.since }}</span>{% endif %}</div>
+    <h1>{{ page.title }}</h1>
+    <p class="lede">{{ page.summary }}</p>
+    {% if page.cast %}<div class="cast mono small">{% for c in page.cast %}<span><b>{{ c.name }}</b> {{ c.role }}</span>{% endfor %}</div>{% endif %}
+    <div class="links mono">
+      {% if page.repo %}<a href="{{ page.repo }}">code</a>{% elsif page.code %}<span class="muted">{{ page.code }}</span>{% endif %}
+      {% if page.site %}<a href="{{ page.site }}">site</a>{% endif %}
+    </div>
+  </header>
+  {% if page.media %}{% include media.html media=page.media caption=true controls=true class="project-media" %}{% endif %}
+  {% if content != "" %}<div class="prose project-body">{{ content }}</div>{% endif %}
+
+  {% if p_posts.size > 0 or page.planned %}
+  <section class="sub">
+    <h2>Writings</h2>
+    <ol class="journey">
+      {% if page.planned %}
+        {% for item in page.planned %}
+          {% assign post = p_posts | where: "series_order", item.order | first %}
+          <li>
+            {% if post %}<a class="journey-row" href="{{ post.url | relative_url }}">{% else %}<div class="journey-row is-coming">{% endif %}
+              <span class="journey-num">{{ item.order | prepend: "0" | slice: -2, 2 }}</span>
+              <span class="journey-text"><span class="journey-title">{{ post.title | default: item.title }}</span><span class="journey-summary">{{ post.subtitle | default: item.summary }}</span></span>
+              {% if post %}<span class="chip chip-strong">read</span>{% else %}<span class="mono muted small">coming</span>{% endif %}
+            {% if post %}</a>{% else %}</div>{% endif %}
+          </li>
+        {% endfor %}
+      {% else %}
+        {% for post in p_posts %}{% include post-row.html post=post %}{% endfor %}
+      {% endif %}
+    </ol>
+  </section>
+  {% endif %}
+</article>

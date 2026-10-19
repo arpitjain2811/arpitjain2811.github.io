@@ -1,0 +1,11 @@
+---
+layout: default
+title: News
+permalink: /news/
+---
+<section class="wrap page">
+  <header class="page-head">
+    <h1>News</h1>
+  </header>
+  <ol class="rows">{% for n in site.data.news %}{% include news-item.html item=n %}{% endfor %}</ol>
+</section>

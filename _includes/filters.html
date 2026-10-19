@@ -1,0 +1,5 @@
+{%- comment -%} Theme filter buttons; items carry data-topic. Hidden without JS (everything shows). {%- endcomment -%}
+<div class="filters mono" data-filters hidden>
+  <button type="button" class="pill is-on" data-filter="all">all</button>
+  {% for th in site.data.themes %}{% if include.skip_notes and th.id == "notes" %}{% continue %}{% endif %}<button type="button" class="pill t-{{ th.color }}" data-filter="{{ th.id }}"><span class="dot" aria-hidden="true"></span>{{ th.name | downcase }}</button>{% endfor %}
+</div>

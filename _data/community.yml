@@ -1,0 +1,71 @@
+# The community page, in order (row 1: scholarship, two wide, and trees; then the fundraisers). Optional `art` (an include) or `media` sits on top; `media` works as on
+# projects ({image|video, poster, alt, caption}). No stock photos: only Arpit's own or ones sent to him.
+# `stats` show as figures on the card (personal numbers are fine here; never Amazon work figures).
+# No amounts raised on fundraisers. Card text without "I"; link labels without "the".
+- id: ajbrs
+  wide: true   # two columns wide
+  art: ajbrs-papers.html   # the moving panel on top of the card, from _data/ajbrs_papers.yml
+  kind: Scholarship
+  since: "yearly since 2022"
+  title: Arpit Jain Best Researcher Scholarship
+  summary: >-
+    An award each year for the best research published by students in the ICT department at
+    Manipal Institute of Technology, my alma mater.
+  # From the scholarship site's past recipients and publications pages (2023–2025 cohorts).
+  stats:
+    - {value: "13", label: scholars}
+    - {value: "10", label: papers}
+  links:
+    - {label: scholarship site, url: "https://arpitjain2811.github.io/AJBRS-Website/"}
+    - {label: past recipients, url: "https://arpitjain2811.github.io/AJBRS-Website/past_recipients/"}
+    - {label: publications, url: "https://arpitjain2811.github.io/AJBRS-Website/publications/"}
+- id: trees
+  kind: Trees
+  since: "since 2023"   # first SankalpTaru order Jan 2023; more in 2023, 2025, 2026
+  title: Planting trees in India
+  media:
+    video: /assets/media/community/trees.mp4
+    poster: /assets/media/community/trees.jpg
+    alt: "Eight of my saplings with their SankalpTaru tags, planted between Feb 2023 and Sep 2026 in Punjab, Himachal Pradesh, Madhya Pradesh, Karnataka, Odisha, West Bengal and Assam."
+  summary: Planted through SankalpTaru.
+  stats:
+    - {value: "745", label: trees}
+    - {value: "12+", label: states}
+    - {value: "372.5 t", label: CO₂ absorbed}
+  links:
+    - {label: view forest, url: "https://sankalptaru.org/user/w24pVj/"}
+- id: base2space
+  kind: Fundraiser
+  since: "Sep 2026"
+  title: Base 2 Space
+  media:
+    image: /assets/img/community/base2space.jpg
+    alt: "Me at the top of the Space Needle after the climb, with the medal and bib 523, downtown Seattle behind."
+  summary: >-
+    Climbed the stairs of the Space Needle to raise money for Fred Hutch Cancer Center, through the
+    Space Needle Foundation.
+  stats:
+    - {value: "832", label: stairs}
+    - {value: "520 ft", label: climbed}
+  links:
+    - {label: fundraiser, url: "https://runsignup.com/arpit"}
+- id: stjude
+  kind: Fundraiser
+  since: "Nov 2022"
+  title: St. Jude push-up challenge
+  media:
+    video: /assets/media/community/stjude-pushups.mp4
+    poster: /assets/media/community/stjude-pushups.jpg
+    alt: "Push-ups, and the whiteboard tally for 3,000 push-ups filling up over November."
+  summary: >-
+    A month of push-ups to raise money for St. Jude Children's Research Hospital.
+  stats:
+    - {value: "3,000", label: push-ups}
+    - {value: "30", label: days}
+- id: teaching
+  kind: Teaching
+  since: "2014–2015"
+  title: Programming Languages recitations, NYU
+  summary: Ran the recitations for NYU's graduate Programming Languages course as an adjunct.
+  links:
+    - {label: recitation notes, url: "https://github.com/arpitjain2811/Programming-Languages-Recitation-Fall-2014-NYU"}

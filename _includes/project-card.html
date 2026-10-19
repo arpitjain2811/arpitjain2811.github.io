@@ -1,0 +1,13 @@
+{%- assign p = include.project -%}
+{%- assign th = site.data.themes | where: "id", p.theme | first -%}
+{%- assign p_posts = site.posts | where: "project", p.slug -%}
+{%- comment -%} The title link stretches over the whole card; the clip's pause button sits above it. {%- endcomment -%}
+<div class="card project-card t-{{ th.color }}{% if p.media %} has-media{% endif %}" data-topic="{{ p.theme }}">
+  {% if p.media %}{% include media.html media=p.media class="card-media" %}{% endif %}
+  <div class="card-head"><span class="swatch" aria-hidden="true"></span><a class="mono strong card-link" href="{{ p.url | relative_url }}">{{ p.title }}</a></div>
+  <p>{{ p.summary }}</p>
+  <div class="card-foot mono small muted">
+    <span>{{ th.name }}</span>
+    <span>{% if p_posts.size > 0 %}{{ p_posts.size }} post{% if p_posts.size > 1 %}s{% endif %}{% elsif p.planned %}posts coming{% else %}no posts yet{% endif %}</span>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+# Themes group projects and writing. `color` is a token in site.css (--t-<color>).
+- id: robot-learning
+  name: Robot learning
+  color: orange
+  blurb: Teaching robots new skills.
+- id: self-supervised
+  name: Self-supervised learning
+  color: violet
+  blurb: Models that learn from unlabeled data.
+- id: agents
+  name: Agents
+  color: green
+  blurb: AI agents, at work and for fun.
+- id: notes
+  name: Notes
+  color: ink

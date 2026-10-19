@@ -1,0 +1,20 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<section class="wrap page">
+  <header class="page-head">
+    <h1>Projects</h1>
+  </header>
+  {% include filters.html skip_notes=true %}
+  {% assign projects = site.projects | sort: "order" %}
+  {% for th in site.data.themes %}
+    {% assign in_theme = projects | where: "theme", th.id %}
+    {% if in_theme.size == 0 %}{% continue %}{% endif %}
+    <section class="theme-group t-{{ th.color }}" id="{{ th.id }}" data-topic="{{ th.id }}">
+      <div class="theme-head"><h2><span class="swatch" aria-hidden="true"></span>{{ th.name }}</h2><p class="muted">{{ th.blurb }}</p></div>
+      <div class="cards">{% for p in in_theme %}{% include project-card.html project=p %}{% endfor %}</div>
+    </section>
+  {% endfor %}
+</section>

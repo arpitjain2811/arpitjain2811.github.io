@@ -1,0 +1,10 @@
+{%- comment -%} The scholarship card's reel: recipients' paper titles scrolling up (paused on hover; still under "reduce motion"). {%- endcomment -%}
+{%- assign papers = site.data.ajbrs_papers -%}
+<div class="paper-reel" role="img" aria-label="Titles of {{ papers.size }} papers published by the scholarship's recipients, 2023 to 2025.">
+  <span class="reel-label mono">recipients' papers</span>
+  <div class="reel-window"><div class="paper-track" aria-hidden="true">
+    {%- for round in (1..2) -%}
+      {%- for p in papers -%}<div class="paper"><span class="paper-year mono">{{ p.year }}</span><span class="paper-title">{{ p.title }}</span></div>{%- endfor -%}
+    {%- endfor -%}
+  </div></div>
+</div>

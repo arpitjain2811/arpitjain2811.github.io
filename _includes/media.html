@@ -1,0 +1,17 @@
+{%- comment -%}
+  include.media: {video, poster, alt, caption} or {image, alt, caption}. Video is H.264 MP4 (plays in
+  every current browser, iOS included): muted, looped, inline; site.js plays it only while on screen
+  and not at all under "reduce motion". Without JS it shows the poster (with controls where include.controls).
+{%- endcomment -%}
+{%- assign m = include.media -%}
+<figure class="media{% if include.class %} {{ include.class }}{% endif %}">
+  {%- if m.video -%}
+  <video class="media-el" muted loop playsinline{% if include.controls %} controls{% endif %} preload="none" poster="{{ m.poster | relative_url }}?v={{ site.time | date: '%s' }}" aria-label="{{ m.alt }}" data-autoplay>
+    <source src="{{ m.video | relative_url }}?v={{ site.time | date: '%s' }}" type="video/mp4">
+  </video>
+  <button class="media-toggle" type="button" hidden aria-label="Pause the clip" data-state="playing"><svg class="i-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1.5" width="2.6" height="9" rx=".6"/><rect x="7.4" y="1.5" width="2.6" height="9" rx=".6"/></svg><svg class="i-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.6v8.8L10.4 6z"/></svg></button>
+  {%- else -%}
+  <img class="media-el" src="{{ m.image | relative_url }}?v={{ site.time | date: '%s' }}" alt="{{ m.alt }}" loading="lazy">
+  {%- endif -%}
+  {%- if m.caption and include.caption -%}<figcaption>{{ m.caption }}</figcaption>{%- endif -%}
+</figure>

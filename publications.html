@@ -1,0 +1,11 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
+<section class="wrap page">
+  <header class="page-head">
+    <h1>Publications</h1>
+  </header>
+  <ol class="pubs">{% for pub in site.data.publications %}{% include pub.html pub=pub %}{% endfor %}</ol>
+</section>
