@@ -16,9 +16,9 @@
     - {value: "13", label: scholars}
     - {value: "10", label: papers}
   links:
-    - {label: scholarship site, url: "https://arpitjain2811.github.io/AJBRS-Website/"}
-    - {label: past recipients, url: "https://arpitjain2811.github.io/AJBRS-Website/past_recipients/"}
-    - {label: publications, url: "https://arpitjain2811.github.io/AJBRS-Website/publications/"}
+    - {label: scholarship site, url: "https://scholarship.arpit-jain.com/"}
+    - {label: past recipients, url: "https://scholarship.arpit-jain.com/past_recipients/"}
+    - {label: publications, url: "https://scholarship.arpit-jain.com/publications/"}
 - id: trees
   kind: Trees
   since: "since 2023"   # first SankalpTaru order Jan 2023; more in 2023, 2025, 2026

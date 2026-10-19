@@ -32,7 +32,7 @@
   kind: community
   text: Started the Arpit Jain Best Researcher Scholarship at Manipal Institute of Technology.
   links:
-    - {label: scholarship, url: "https://arpitjain2811.github.io/AJBRS-Website/"}
+    - {label: scholarship, url: "https://scholarship.arpit-jain.com/"}
 - date: 2019-11-24
   kind: research
   text: "Our paper ORL, on benchmarking reinforcement learning for online optimization problems, went up on arXiv."
