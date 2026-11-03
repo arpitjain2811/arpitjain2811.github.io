@@ -9,8 +9,8 @@
   since: "yearly since 2022"
   title: Arpit Jain Best Researcher Scholarship
   summary: >-
-    An award each year for the best research published by students in the ICT department at
-    Manipal Institute of Technology, my alma mater.
+    An award each year for the best research published by students in the School of Computer
+    Engineering (formerly the ICT department) at Manipal Institute of Technology, my alma mater.
   # From the scholarship site's past recipients and publications pages (2023–2026 cohorts).
   stats:
     - {value: "20", label: scholars}
