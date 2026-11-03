@@ -1,5 +1,8 @@
 # Papers by the scholarship's recipients, from its publications page (scholarship.arpit-jain.com/publications/).
 # Newest first. Add each new year's papers here; the scholarship card's reel shows them all.
+- {year: 2026, title: "Design and Implementation of a Secure, Tor-Integrated File Sharing Framework using Hybrid Cryptography"}
+- {year: 2026, title: "Hybrid ConvLSTM–ST-GAT with Temporal Self-Attention for Spatiotemporal Crime Hotspot Prediction and Cross-City Generalization"}
+- {year: 2026, title: "SISA Based Machine Unlearning for Credit Card Default Prediction with Shard Optimization"}
 - {year: 2025, title: "Sequential Deep Learning Model Development for Battery Remaining Useful Life Forecasting and Anomaly Detection"}
 - {year: 2025, title: "Penetration Testing IoT Devices to Discover Critical Vulnerabilities"}
 - {year: 2025, title: "Performance Analysis of Deep Neural Networks and YOLOv8n Algorithm in Early Detection of Skin Cancer"}
