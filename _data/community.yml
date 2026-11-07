@@ -11,14 +11,13 @@
   summary: >-
     An award each year for the best research published by students in the School of Computer
     Engineering at Manipal Institute of Technology, my alma mater.
-  # From the scholarship site's past recipients and publications pages (2023–2026 cohorts).
+  # From the scholarship site's recipients page (2023–2026 cohorts).
   stats:
     - {value: "20", label: scholars}
     - {value: "13", label: papers}
   links:
     - {label: scholarship site, url: "https://scholarship.arpit-jain.com/"}
-    - {label: past recipients, url: "https://scholarship.arpit-jain.com/past_recipients/"}
-    - {label: publications, url: "https://scholarship.arpit-jain.com/publications/"}
+    - {label: recipients and papers, url: "https://scholarship.arpit-jain.com/recipients/"}
 - id: trees
   kind: Trees
   since: "since 2023"   # first SankalpTaru order Jan 2023; more in 2023, 2025, 2026
