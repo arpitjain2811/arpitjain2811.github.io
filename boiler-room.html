@@ -10,11 +10,14 @@ description: "A newsletter on agentic software development: what shipped, what's
     <div class="kicker"><a href="{{ '/writings/' | relative_url }}">writings</a> · series</div>
     <h1>Boiler Room</h1>
     <p class="lede">A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday, Wednesday and Friday, to read or to listen.</p>
-    <div class="br-subscribe">
-      <span class="mono small muted">Podcast feed</span>
-      <code class="mono" id="br-feed-url">{{ '/writings/boiler-room/feed.xml' | absolute_url }}</code>
-      <button class="pill" type="button" data-br-copy="br-feed-url">copy</button>
-      <span class="small muted">Apple Podcasts: Follow a Show by URL. Overcast: Add URL.</span>
+    {%- assign feed = '/writings/boiler-room/feed.xml' | absolute_url -%}
+    {%- assign feed_bare = feed | remove_first: 'https://' -%}
+    <div class="br-listen" aria-label="Follow the podcast">
+      <span class="mono small muted">follow in</span>
+      <a class="pill" href="podcast://{{ feed_bare }}">Apple Podcasts</a>
+      <a class="pill" href="overcast://x-callback-url/add?url={{ feed | url_encode }}">Overcast</a>
+      <a class="pill" href="pktc://subscribe/{{ feed_bare }}">Pocket Casts</a>
+      <button class="pill" type="button" data-br-copy-url="{{ feed }}">copy RSS link</button>
     </div>
   </header>
 

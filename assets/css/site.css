@@ -440,8 +440,8 @@ ol.br-sources { padding-left: 26px; list-style: decimal; }
 ol.br-sources li { display: list-item; }
 ol.br-sources li .mono { display: block; }
 .br-pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 14px; }
-.br-subscribe { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.br-subscribe code { font-size: 13px; padding: 4px 8px; background: var(--rule-soft); border-radius: 3px; overflow-wrap: anywhere; }
+.br-listen { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.br-listen .muted { margin-right: 4px; }
 .series-card { display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: var(--card); border: 1px solid var(--rule); border-top: 3px solid var(--c); border-radius: 6px; text-decoration: none; transition: border-color .15s; }
 .series-card:hover { border-color: var(--c); color: var(--ink); }
 .series-card .kicker { color: var(--c); }

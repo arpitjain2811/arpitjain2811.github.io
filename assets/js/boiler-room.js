@@ -102,13 +102,13 @@
     audio.addEventListener("ended", function () { store.set(key, "0"); });
   });
 
-  document.querySelectorAll("[data-br-copy]").forEach(function (b) {
+  document.querySelectorAll("[data-br-copy-url]").forEach(function (b) {
+    var label = b.textContent;
     b.addEventListener("click", function () {
-      var el = document.getElementById(b.dataset.brCopy);
-      if (!el || !navigator.clipboard) return;
-      navigator.clipboard.writeText(el.textContent.trim()).then(function () {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(b.dataset.brCopyUrl).then(function () {
         b.textContent = "copied";
-        setTimeout(function () { b.textContent = "copy"; }, 1500);
+        setTimeout(function () { b.textContent = label; }, 1500);
       }).catch(function () {});
     });
   });
