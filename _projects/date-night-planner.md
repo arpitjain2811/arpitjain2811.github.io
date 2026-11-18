@@ -2,6 +2,7 @@
 title: Date Night Planner
 theme: agents
 status: active
+featured: true
 since: 2026
 order: 4
 # TODO(Arpit): one line in your words.

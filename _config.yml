@@ -5,8 +5,7 @@ description: >-
   Arpit Jain is an engineering manager at AWS, working on Amazon Quick. At home he's teaching a
   robotic arm to pick up dice.
 author: Arpit Jain
-# Until the custom domain is attached; then https://arpit-jain.com (and a CNAME file).
-url: "https://arpitjain2811.github.io"
+url: "https://arpit-jain.com"
 baseurl: ""
 lang: en
 
@@ -46,3 +45,6 @@ exclude:
   - vendor/
   - .bundle/
   - scripts/
+  - scholarship-logos/
+  - scholarship-mock/
+  - arpit-jain.com.zone

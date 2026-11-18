@@ -13,12 +13,15 @@
   });
 
   document.querySelectorAll("[data-filters]").forEach(function (bar) {
-    bar.hidden = false;
     var scope = bar.parentElement;
-    // a theme with nothing on this page gets no button
+    // a theme with nothing on this page gets no button; with fewer than two themes, no bar at all
+    var themes = 0;
     bar.querySelectorAll("[data-filter]").forEach(function (b) {
-      if (b.dataset.filter !== "all" && !scope.querySelector('[data-topic="' + b.dataset.filter + '"]')) b.hidden = true;
+      if (b.dataset.filter === "all") return;
+      if (scope.querySelector('[data-topic="' + b.dataset.filter + '"]:not([data-filters] *)')) themes++;
+      else b.hidden = true;
     });
+    bar.hidden = themes < 2;
     function apply(id) {
       bar.querySelectorAll("[data-filter]").forEach(function (b) { b.classList.toggle("is-on", b.dataset.filter === id); });
       scope.querySelectorAll("[data-topic]").forEach(function (el) {
