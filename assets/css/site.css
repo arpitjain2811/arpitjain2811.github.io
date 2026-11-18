@@ -204,6 +204,11 @@ mark.todo { padding: 0 4px; background: var(--orange-tint); color: var(--orange-
 .profile-id h1 { margin: 0 0 8px; font-size: 40px; }
 .profile-id p { margin: 0; line-height: 1.6; color: var(--ink-2); }
 .profile-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.profile-links { flex-direction: column; gap: 10px; }
+.profile-links a { display: inline-flex; align-items: center; gap: 8px; }
+/* small one-colour icons next to a label (_includes/icon.html) */
+.icon { flex: none; width: 14px; height: 14px; fill: currentColor; }
+.button svg.icon { fill: currentColor; stroke: none; }
 .profile-body h2 { margin: 0 0 16px; font-size: 34px; }
 .bio p { margin: 0 0 18px; max-width: 36em; }
 .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 48px; margin-top: 16px; padding-top: 24px; border-top: 1px solid var(--rule); }
