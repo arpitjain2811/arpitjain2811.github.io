@@ -7,21 +7,13 @@ permalink: /writings/
   <header class="page-head">
     <h1>Writings</h1>
   </header>
-  {%- assign br_latest = site.boiler_room | sort: "date" | last -%}
-  {% if br_latest %}
-  <a class="series-card br" href="{{ '/writings/boiler-room/' | relative_url }}">
-    <span class="kicker">Series · Monday, Wednesday, Friday</span>
-    <span class="series-title">Boiler Room</span>
-    <span class="row-summary">A newsletter on agentic software development, to read or to listen.</span>
-    <span class="mono small muted">Latest: No. {{ br_latest.number | prepend: "00" | slice: -3, 3 }}, {{ br_latest.title | escape }}</span>
-  </a>
-  {% endif %}
+  {% include boiler-room-card.html %}
   {% include filters.html %}
   {% if site.posts.size > 0 %}
     <ol class="rows" data-filterable>
       {% for post in site.posts %}{% include post-row.html post=post %}{% endfor %}
     </ol>
   {% else %}
-    <p class="muted">The first posts are on their way, starting with the <a href="{{ '/projects/roll-model/' | relative_url }}">Roll Model series</a>.</p>
+    <p class="muted writings-next">Posts on <a href="{{ '/projects/roll-model/' | relative_url }}">Roll Model</a> are on their way.</p>
   {% endif %}
 </section>

@@ -59,10 +59,11 @@ title: Arpit Jain
     <h2>Writings</h2>
     <a class="mono small" href="{{ '/writings/' | relative_url }}">all writings</a>
   </div>
+  {% include boiler-room-card.html %}
   {% if site.posts.size > 0 %}
     <ol class="rows">{% for post in site.posts limit: 5 %}{% include post-row.html post=post %}{% endfor %}</ol>
   {% else %}
-    <p class="muted">The first posts are on their way, starting with the <a href="{{ '/projects/roll-model/' | relative_url }}">Roll Model series</a>.</p>
+    <p class="muted writings-next">Posts on <a href="{{ '/projects/roll-model/' | relative_url }}">Roll Model</a> are on their way.</p>
   {% endif %}
 </section>
 

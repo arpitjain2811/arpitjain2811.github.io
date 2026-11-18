@@ -42,6 +42,11 @@ defaults:
     values: {layout: project}
   - scope: {path: "", type: boiler_room}
     values: {layout: boiler-edition}
+  # Boiler Room share card (the series' own card instead of the site's)
+  - scope: {path: "", type: boiler_room}
+    values: {image: /assets/img/boiler-room-card.jpg}
+  - scope: {path: "boiler-room.html"}
+    values: {image: /assets/img/boiler-room-card.jpg}
 
 exclude:
   - README.md
