@@ -1,0 +1,118 @@
+---
+layout: default
+---
+{%- comment -%}
+  One Boiler Room edition. All content comes from front matter (written by
+  scripts/boiler_room/publish_edition.py): key_ideas, sections[].items[], further_reading, sources,
+  audio {file, duration_sec, bytes} and chapters [{label, start}].
+{%- endcomment -%}
+{%- assign num = page.number | prepend: "00" | slice: -3, 3 -%}
+<article class="post br">
+  <header class="post-head br-head">
+    <div class="kicker"><a href="{{ '/writings/boiler-room/' | relative_url }}">Boiler Room</a> · No. {{ num }}</div>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.dek %}<p class="subtitle">{{ page.dek | escape }}</p>{% endif %}
+    <div class="chips">
+      <span class="chip">{{ page.edition_id | date: "%a %-d %b %Y" }}</span>
+      {% if page.covers %}<span class="chip">covers {{ page.covers | escape }}</span>{% endif %}
+      {% if page.audio.duration_sec %}<span class="chip">{{ page.audio.duration_sec | divided_by: 60.0 | round }} min listen</span>{% endif %}
+    </div>
+  </header>
+
+  {% if page.audio.file %}
+  <div class="br-player" data-br-player data-title="Boiler Room No. {{ num }}: {{ page.title | escape }}">
+    <audio class="br-native" controls preload="metadata" src="{{ page.audio.file | relative_url }}"></audio>
+    <div class="br-ui" hidden>
+      <div class="br-row">
+        <button class="br-play" type="button" data-br="play" aria-label="Play episode">
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg>
+        </button>
+        <div class="br-meta">
+          <span class="strong">Listen to this edition</span>
+          <span class="mono small muted br-time"><span data-br="now">0:00</span> / <span data-br="total">{% if page.audio.duration_sec %}{% assign m = page.audio.duration_sec | divided_by: 60 | floor %}{% assign s = page.audio.duration_sec | modulo: 60 | floor | prepend: "0" | slice: -2, 2 %}{{ m }}:{{ s }}{% else %}–:––{% endif %}</span></span>
+        </div>
+      </div>
+      <div class="br-track">
+        <div class="br-ticks" aria-hidden="true">{% if page.audio.duration_sec %}{% for c in page.chapters %}{% if c.start > 0 %}<i style="left: {{ c.start | times: 100.0 | divided_by: page.audio.duration_sec | round: 2 }}%"></i>{% endif %}{% endfor %}{% endif %}</div>
+        <input class="br-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek" data-br="seek">
+      </div>
+      <div class="br-controls">
+        <button class="pill" type="button" data-br="back" aria-label="Back 15 seconds">−15s</button>
+        <button class="pill" type="button" data-br="fwd" aria-label="Forward 30 seconds">+30s</button>
+        <button class="pill" type="button" data-br="speed" aria-label="Playback speed">1×</button>
+      </div>
+      {% if page.chapters.size > 0 %}
+      <div class="br-chapters" aria-label="Chapters">
+        {% for c in page.chapters %}{% assign cm = c.start | divided_by: 60 | floor %}{% assign cs = c.start | modulo: 60 | floor | prepend: "0" | slice: -2, 2 %}<button class="pill" type="button" data-br-jump="{{ c.start }}">{{ c.label | escape }} <span class="muted">{{ cm }}:{{ cs }}</span></button>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.key_ideas.size > 0 %}
+  <section class="br-section" aria-labelledby="br-ideas">
+    <h2 id="br-ideas">Key ideas</h2>
+    <div class="br-ideas">
+      {% for k in page.key_ideas %}
+      <div class="br-idea">
+        <div class="br-num">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</div>
+        <h3>{{ k.title | escape }}</h3>
+        <p>{{ k.body | escape }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% for sec in page.sections %}
+  <section class="br-section" id="{{ sec.id }}" aria-labelledby="br-{{ sec.id }}">
+    <h2 id="br-{{ sec.id }}">{{ sec.label | escape }}</h2>
+    {% for it in sec.items %}
+      {% if sec.id == "try" %}
+      <div class="br-try">
+        {% if it.tag %}<span class="br-tag">{{ it.tag | escape }}</span>{% endif %}
+        <h3>{{ it.headline | escape }}</h3>
+        {% if it.body %}<p>{{ it.body | escape }}</p>{% endif %}
+        {% if it.steps.size > 0 %}<ol>{% for st in it.steps %}<li>{{ st | escape }}</li>{% endfor %}</ol>{% endif %}
+        {% if it.measure %}<p class="br-measure"><span class="br-tag">Measure</span> {{ it.measure | escape }}</p>{% endif %}
+        {% if it.links.size > 0 %}<div class="br-links">{% for l in it.links %}<a class="ext" href="{{ l.url | escape }}">{{ l.label | escape }}</a>{% endfor %}</div>{% endif %}
+      </div>
+      {% else %}
+      <div class="br-item">
+        {% if it.tag %}<span class="br-tag">{{ it.tag | escape }}</span>{% endif %}
+        <h3>{{ it.headline | escape }}</h3>
+        <p>{{ it.body | escape }}</p>
+        {% if it.links.size > 0 %}<div class="br-links">{% for l in it.links %}<a class="ext" href="{{ l.url | escape }}">{{ l.label | escape }}</a>{% endfor %}</div>{% endif %}
+      </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+  {% endfor %}
+
+  {% if page.further_reading.size > 0 %}
+  <section class="br-section" aria-labelledby="br-reading">
+    <h2 id="br-reading">Further reading</h2>
+    <ul class="br-list">
+      {% for r in page.further_reading %}<li><a class="ext" href="{{ r.url | escape }}">{{ r.title | escape }}</a><span class="mono small muted">{{ r.publisher | escape }}{% if r.date and r.date != "" %} · {{ r.date }}{% endif %}</span></li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if page.sources.size > 0 %}
+  <section class="br-section" aria-labelledby="br-sources">
+    <h2 id="br-sources">Sources</h2>
+    <ol class="br-list br-sources">
+      {% for r in page.sources %}<li><a class="ext" href="{{ r.url | escape }}">{{ r.title | escape }}</a><span class="mono small muted">{{ r.publisher | escape }}{% if r.date and r.date != "" %} · {{ r.date }}{% endif %}</span></li>{% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  <nav class="br-pager mono" aria-label="More editions">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← No. {{ page.previous.number | prepend: "00" | slice: -3, 3 }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ '/writings/boiler-room/' | relative_url }}">all editions</a>
+    {% if page.next %}<a href="{{ page.next.url | relative_url }}">No. {{ page.next.number | prepend: "00" | slice: -3, 3 }} →</a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>
+<script defer src="{{ '/assets/js/boiler-room.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

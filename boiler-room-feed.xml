@@ -1,0 +1,41 @@
+---
+layout: null
+permalink: /writings/boiler-room/feed.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Boiler Room</title>
+  <link>{{ '/writings/boiler-room/' | absolute_url }}</link>
+  <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/rss+xml"/>
+  <description>A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday, Wednesday and Friday.</description>
+  <language>en-us</language>
+  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+  <itunes:author>Boiler Room</itunes:author>
+  <itunes:owner><itunes:name>Boiler Room</itunes:name></itunes:owner>
+  <itunes:image href="{{ '/assets/boiler-room/cover.png' | absolute_url }}"/>
+  <image>
+    <url>{{ '/assets/boiler-room/cover.png' | absolute_url }}</url>
+    <title>Boiler Room</title>
+    <link>{{ '/writings/boiler-room/' | absolute_url }}</link>
+  </image>
+  <itunes:category text="Technology"/>
+  <itunes:explicit>false</itunes:explicit>
+  <itunes:type>episodic</itunes:type>
+  {%- assign eds = site.boiler_room | sort: "date" | reverse -%}
+  {%- for e in eds -%}{%- if e.audio.file %}
+  <item>
+    <title>No. {{ e.number | prepend: "00" | slice: -3, 3 }}: {{ e.title | xml_escape }}</title>
+    <link>{{ e.url | absolute_url }}</link>
+    <guid isPermaLink="false">boiler-room-{{ e.edition_id }}</guid>
+    <pubDate>{{ e.date | date_to_rfc822 }}</pubDate>
+    <description>{{ e.dek | xml_escape }} Read the edition and its sources: {{ e.url | absolute_url }}</description>
+    <enclosure url="{{ e.audio.file | absolute_url }}" length="{{ e.audio.bytes }}" type="audio/mpeg"/>
+    <itunes:duration>{{ e.audio.duration_sec | round }}</itunes:duration>
+    <itunes:episode>{{ e.number }}</itunes:episode>
+    <itunes:explicit>false</itunes:explicit>
+  </item>
+  {%- endif -%}{%- endfor %}
+</channel>
+</rss>

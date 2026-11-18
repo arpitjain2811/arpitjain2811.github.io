@@ -1,0 +1,41 @@
+---
+layout: default
+title: Boiler Room
+permalink: /writings/boiler-room/
+description: "A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday, Wednesday and Friday."
+---
+{%- assign eds = site.boiler_room | sort: "date" | reverse -%}
+<section class="wrap page br br-hub">
+  <header class="page-head">
+    <div class="kicker"><a href="{{ '/writings/' | relative_url }}">writings</a> · series</div>
+    <h1>Boiler Room</h1>
+    <p class="lede">A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday, Wednesday and Friday, to read or to listen.</p>
+    <div class="br-subscribe">
+      <span class="mono small muted">Podcast feed</span>
+      <code class="mono" id="br-feed-url">{{ '/writings/boiler-room/feed.xml' | absolute_url }}</code>
+      <button class="pill" type="button" data-br-copy="br-feed-url">copy</button>
+      <span class="small muted">Apple Podcasts: Follow a Show by URL. Overcast: Add URL.</span>
+    </div>
+  </header>
+
+  {% if eds.size > 0 %}
+  <ol class="rows">
+    {% for e in eds %}
+    <li class="row">
+      <span class="row-when mono small muted">No. {{ e.number | prepend: "00" | slice: -3, 3 }}<br>{{ e.edition_id | date: "%-d %b %Y" }}</span>
+      <div class="row-body">
+        <a class="row-title" href="{{ e.url | relative_url }}">{{ e.title | escape }}</a>
+        {% if e.dek %}<p class="row-summary">{{ e.dek | escape }}</p>{% endif %}
+        <div class="chips">
+          {% if e.weekday %}<span class="chip">{{ e.weekday | downcase }}</span>{% endif %}
+          {% if e.audio.file and e.audio.duration_sec %}<span class="chip">{{ e.audio.duration_sec | divided_by: 60.0 | round }} min listen</span>{% endif %}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="muted">The first edition is on its way.</p>
+  {% endif %}
+</section>
+<script defer src="{{ '/assets/js/boiler-room.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

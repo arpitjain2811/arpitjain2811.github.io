@@ -28,6 +28,10 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  # Boiler Room: a newsletter series under writings, one file per edition (see scripts/boiler_room/RUNBOOK.md)
+  boiler_room:
+    output: true
+    permalink: /writings/boiler-room/:name/
 
 defaults:
   - scope: {path: ""}
@@ -36,6 +40,8 @@ defaults:
     values: {layout: post}
   - scope: {path: "", type: projects}
     values: {layout: project}
+  - scope: {path: "", type: boiler_room}
+    values: {layout: boiler-edition}
 
 exclude:
   - README.md
