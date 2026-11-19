@@ -13,7 +13,9 @@ sitemap: false
   <language>en-us</language>
   <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
   <itunes:author>Boiler Room</itunes:author>
-  <itunes:owner><itunes:name>Boiler Room</itunes:name><itunes:email>arpit.jain2811@gmail.com</itunes:email></itunes:owner>
+  {%- comment %} No owner email: the feed is public and scraped by directories. To claim the show on a
+      new platform, add <itunes:email> here for the verification, then take it out again. {% endcomment %}
+  <itunes:owner><itunes:name>Boiler Room</itunes:name></itunes:owner>
   <itunes:image href="{{ '/assets/boiler-room/cover.png' | absolute_url }}"/>
   <image>
     <url>{{ '/assets/boiler-room/cover.png' | absolute_url }}</url>
