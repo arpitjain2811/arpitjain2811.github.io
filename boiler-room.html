@@ -15,7 +15,7 @@ spotify: "https://open.spotify.com/show/6zTQ2HybQROyszYwqUetuo"
     {%- assign feed_bare = feed | remove_first: 'https://' -%}
     <div class="br-listen" aria-label="Follow the podcast">
       <span class="mono small muted">follow in</span>
-      <a class="pill" href="podcast://{{ feed_bare }}">Apple Podcasts</a>
+      <a class="pill" href="https://podcasts.apple.com/us/podcast/boiler-room/id6836678402">Apple Podcasts</a>
       {%- comment %} Spotify only plays shows listed with it: set `spotify` above to the show's open.spotify.com URL once it is. {% endcomment %}
       {%- assign spotify = page.spotify | strip -%}
       {%- if spotify.size > 0 %}
