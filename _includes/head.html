@@ -17,5 +17,8 @@
 {% seo %}
 {%- endif %}
 {% feed_meta %}
+{%- if page.url == "/" %}
+{% include person-jsonld.html %}
+{%- endif %}
 <link rel="alternate" type="application/rss+xml" href="{{ '/writings/boiler-room/feed.xml' | absolute_url }}" title="Boiler Room">
 

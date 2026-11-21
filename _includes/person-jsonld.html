@@ -1,0 +1,26 @@
+{%- comment -%}
+  For search engines, on the home page only: who Arpit is and his profiles elsewhere, so a search for
+  his name can tie them to this site. The scholarship site names this same person (@id) as its founder.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ '/' | absolute_url }}#person",
+  "name": {{ site.author | jsonify }},
+  "url": "{{ '/' | absolute_url }}",
+  "image": "{{ '/assets/img/arpit.jpg' | absolute_url }}",
+  "jobTitle": "Senior Software Engineering Manager",
+  "worksFor": {"@type": "Organization", "name": "Amazon Web Services"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "New York University"},
+    {"@type": "CollegeOrUniversity", "name": "Manipal Institute of Technology"}
+  ],
+  "knowsAbout": ["Robot learning", "Agentic AI", "Computer vision", "Reinforcement learning"],
+  "sameAs": [
+    "https://www.linkedin.com/in/arpitjain2811/",
+    "https://github.com/{{ site.github_username }}",
+    "https://scholar.google.com/citations?user=BYcXL0oAAAAJ"
+  ]
+}
+</script>
