@@ -1,7 +1,8 @@
 # Boiler Room runbook
 
 Boiler Room is a newsletter on agentic software development, published on this site under
-writings at /writings/boiler-room/ every Monday, Wednesday and Friday, with an audio edition and a
+writings at /writings/boiler-room/ every Monday and Thursday (Monday, Wednesday and Friday until
+Nov 27, 2026), with an audio edition and a
 podcast feed (/writings/boiler-room/feed.xml). A scheduled task does each edition end to end by
 following this file. `scripts/` is excluded from the site build.
 
@@ -27,7 +28,8 @@ following this file. `scripts/` is excluded from the site build.
    date to now. Read the two newest editions so you don't repeat their items (a real development in
    a continuing story is fine). Read `scripts/boiler_room/topics.md`.
 
-2. **Research** (about 20 searches and fetches). Check every one of these for posts in the window:
+2. **Research** (at least 30 searches, and as many fetches as the stories need; explore widely, well
+   beyond the sites below). Check every one of these for posts in the window:
    - Anthropic and Claude: anthropic.com/news, anthropic.com/engineering, claude.com/blog,
      the Claude Code changelog (code.claude.com/docs/en/changelog), Claude Platform release notes
    - OpenAI: openai.com/news, the OpenAI developer blog (developers.openai.com), the Codex
@@ -41,6 +43,16 @@ following this file. `scripts/` is excluded from the site build.
    three open searches for things not on the list (new agent apps, new coding agents, new terms
    practitioners are using). The edition should follow where the field is going, not just the
    list.
+
+   **No permission prompts.** The run is unattended, and every page that needs approval sends the
+   owner a prompt. Fetch only URLs that came back in a WebSearch result during this run (find each
+   source above by searching for it first), or the exact URLs written in the task prompt. When a
+   page or a helper's report points to another URL (a post linked from an index page, the original
+   behind a digest or a release mirror), first run
+   a WebSearch for its title or exact URL and fetch it from that result. Never hand-build, edit or
+   guess a URL. When briefing a fetch helper, tell it the same: fetch only the URLs you give it, and
+   report other links it finds instead of opening them. If a fetch is refused or asks for approval,
+   don't wait or retry it; find the fact through another search result, or cut it.
 
 3. **Write the edition JSON** (`/tmp/br/$today/edition.json`). Use the newest edition's front
    matter as the template; the fields are the same:
@@ -59,8 +71,8 @@ following this file. `scripts/` is excluded from the site build.
    "Good morning. This is Boiler Room, a brief on agentic software development.", the weekday,
    date and edition number, and the day's thread in one or two sentences. Then section markers on
    their own lines: `--- News`, `--- Practices`, `--- Launches`, `--- Try this week`, `--- Outro`.
-   The outro is two short lines and names the next edition day (Monday → Wednesday,
-   Wednesday → Friday, Friday → Monday). Write for the ear: short sentences; no URLs, markdown,
+   The outro is two short lines and names the next edition day (Monday → Thursday,
+   Thursday → Monday, Friday → Monday). Write for the ear: short sentences; no URLs, markdown,
    bullets, parentheses or symbols; spell out numbers, prices and versions ("GPT six point two",
    "eight dollars per million input tokens"); say acronyms as letters ("M C P", "O-Auth"); say
    "pull request" rather than PR and "agents file" for AGENTS.md. Same facts as the JSON, nothing

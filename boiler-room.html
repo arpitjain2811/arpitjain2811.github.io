@@ -2,7 +2,7 @@
 layout: default
 title: Boiler Room
 permalink: /writings/boiler-room/
-description: "A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday, Wednesday and Friday."
+description: "A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday and Thursday."
 spotify: "https://open.spotify.com/show/6zTQ2HybQROyszYwqUetuo"
 ---
 {%- assign eds = site.boiler_room | sort: "date" | reverse -%}
@@ -10,7 +10,7 @@ spotify: "https://open.spotify.com/show/6zTQ2HybQROyszYwqUetuo"
   <header class="page-head">
     <div class="kicker"><a href="{{ '/writings/' | relative_url }}">writings</a> · series</div>
     <h1>Boiler Room</h1>
-    <p class="lede">A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday, Wednesday and Friday, to read or to listen.</p>
+    <p class="lede">A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday and Thursday, to read or to listen.</p>
     {%- assign feed = '/writings/boiler-room/feed.xml' | absolute_url -%}
     {%- assign feed_bare = feed | remove_first: 'https://' -%}
     <div class="br-listen" aria-label="Follow the podcast">

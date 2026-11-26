@@ -9,7 +9,7 @@ sitemap: false
   <title>Boiler Room</title>
   <link>{{ '/writings/boiler-room/' | absolute_url }}</link>
   <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/rss+xml"/>
-  <description>A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday, Wednesday and Friday.</description>
+  <description>A newsletter on agentic software development: what shipped, what's working, and one thing to try. Monday and Thursday.</description>
   <language>en-us</language>
   <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
   <itunes:author>Boiler Room</itunes:author>
