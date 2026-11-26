@@ -1,8 +1,8 @@
 # Boiler Room runbook
 
 Boiler Room is a newsletter on agentic software development, published on this site under
-writings at /writings/boiler-room/ every Monday and Thursday (Monday, Wednesday and Friday until
-Nov 27, 2026), with an audio edition and a
+writings at /writings/boiler-room/ every Tuesday and Friday (Monday, Wednesday and Friday until
+Nov 25, 2026), with an audio edition and a
 podcast feed (/writings/boiler-room/feed.xml). A scheduled task does each edition end to end by
 following this file. `scripts/` is excluded from the site build.
 
@@ -71,8 +71,8 @@ following this file. `scripts/` is excluded from the site build.
    "Good morning. This is Boiler Room, a brief on agentic software development.", the weekday,
    date and edition number, and the day's thread in one or two sentences. Then section markers on
    their own lines: `--- News`, `--- Practices`, `--- Launches`, `--- Try this week`, `--- Outro`.
-   The outro is two short lines and names the next edition day (Monday → Thursday,
-   Thursday → Monday, Friday → Monday). Write for the ear: short sentences; no URLs, markdown,
+   The outro is two short lines and names the next edition day (Tuesday → Friday,
+   Friday → Tuesday). Write for the ear: short sentences; no URLs, markdown,
    bullets, parentheses or symbols; spell out numbers, prices and versions ("GPT six point two",
    "eight dollars per million input tokens"); say acronyms as letters ("M C P", "O-Auth"); say
    "pull request" rather than PR and "agents file" for AGENTS.md. Same facts as the JSON, nothing
